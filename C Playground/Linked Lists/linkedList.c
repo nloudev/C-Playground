@@ -16,28 +16,28 @@ void print_list(node_t * head) {
 }
 
 // Adding an item to the end of the list
-// void push(node_t * head, int val) {
-//     node_t * current = head;
+void push_end(node_t * head, int val) {
+    node_t * current = head;
     
-//     while (current->next != NULL) {
-//         current = current->next;
-//     }
+    while (current->next != NULL) {
+        current = current->next;
+    }
 
-//     // adding new variable
-//     current->next = (node_t *) malloc(sizeof(node_t));
-//     current->next->val = val;
-//     current->next->next = NULL;
-// }
+    // adding new variable
+    current->next = (node_t *) malloc(sizeof(node_t));
+    current->next->val = val;
+    current->next->next = NULL;
+}
 
 // Adding an item to the beginning of the list
-// void push(node_t ** head, int val) {
-//     node_t * new_node;
-//     new_node = (node_t *) malloc(sizeof(node_t));
+void push_home(node_t ** head, int val) {
+    node_t * new_node;
+    new_node = (node_t *) malloc(sizeof(node_t));
 
-//     new_node->val = val;
-//     new_node->next = *head;
-//     *head = new_node;
-// }
+    new_node->val = val;
+    new_node->next = *head;
+    *head = new_node;
+}
 
 int pop(node_t ** head){
     int retval = -1;
