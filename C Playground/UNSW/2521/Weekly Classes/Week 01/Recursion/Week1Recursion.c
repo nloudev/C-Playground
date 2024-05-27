@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 // RECURSION - Week 1
 
@@ -23,28 +23,22 @@ factorial(3)    = 3 * factorial(2)
 */
 
 // Expressed as a C function
-int factorial(int n)
-{
-    if (n == 1)
-    {
-        return 1;
-    }
-    else
-    {
-        return n * factorial(n - 1);
-    }
+int factorial(int n) {
+  if (n == 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
 }
 
 // iterative version
 
-int iterativeFactorial(int n)
-{
-    int fac = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        fac = fac * i;
-    }
-    return fac;
+int iterativeFactorial(int n) {
+  int fac = 1;
+  for (int i = 1; i <= n; i++) {
+    fac = fac * i;
+  }
+  return fac;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,10 +79,9 @@ int sum(List L) {
 */
 
 // using typical list data structure:
-struct Node
-{
-    int val;
-    struct Node *next;
+struct Node {
+  int val;
+  struct Node *next;
 };
 
 /*int sum(struct Node *L){
@@ -105,16 +98,12 @@ struct Node
 
 // or
 
-int sum(struct Node *L)
-{
-    if (L == NULL)
-    {
-        return 0;
-    }
-    else
-    {
-        return L->val + sum(L->next);
-    }
+int sum(struct Node *L) {
+  if (L == NULL) {
+    return 0;
+  } else {
+    return L->val + sum(L->next);
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,25 +130,26 @@ When designing recursive functions
 */
 
 // Sometimes recursive can be ineeficient
-int fibonacci(int n)
-{
-    if (n == 1)
-    {
-        return 1;
-    }
-    else if (n == 2)
-    {
-        return 1;
-    }
-    else
-    {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+int fibonacci(int n) {
+  if (n == 1) {
+    return 1;
+  } else if (n == 2) {
+    return 1;
+  } else {
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
 }
 
-int main(void)
-{
-    printf("\nHello World\n\n");
-
+// recursive method:
+int fib(int n) {
+  if (n == 0) {
     return 0;
+  } else if (n == 1)
+    [return 1;] else { return fib(n - 1) + fib(n - 2); }
+}
+
+int main(void) {
+  printf("\nHello World\n\n");
+
+  return 0;
 }
