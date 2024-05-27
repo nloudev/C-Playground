@@ -106,6 +106,30 @@ int sum(struct Node *L) {
   }
 }
 
+// Appending a value to a list
+/*
+//Whats wrong with this solution?
+
+struct node *listAppend(struct node *list, int value){
+  if (list == NULL) {
+    return newNode(value);
+  }else {
+    listAppend(list->next, value);
+    return list;
+  }
+}
+
+correct solution:
+struct node *listAppend(struct node *list, int value){
+  if (list == NULL) {
+    return newNode(value);
+  }else {
+    list->next = listAppend(list->next, value);
+    return list;
+  }
+*/
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -144,8 +168,11 @@ int fibonacci(int n) {
 int fib(int n) {
   if (n == 0) {
     return 0;
-  } else if (n == 1)
-    [return 1;] else { return fib(n - 1) + fib(n - 2); }
+  } else if (n == 1){
+    return 1;
+  } else {
+       return fib(n - 1) + fib(n - 2);
+        }
 }
 
 int main(void) {
